@@ -128,18 +128,193 @@ for(let i =1; i<=100; i++){
 </div>
  */}
 
- let count = 0;
+//  let count = 0;
 
-for (let i = 1; i <= 100; i++) {
-    if (i % 2 === 0) {
-        continue;   // skip even
-    }
+// for (let i = 1; i <= 100; i++) {
+//     if (i % 2 === 0) {
+//         continue;   // skip even
+//     }
 
-    console.log(i);
-    count++;
+//     console.log(i);
+//     count++;
 
-    if (count === 5) {
-        break;
-    }
-}
+//     if (count === 5) {
+//         break;
+//     }
+// }
 
+// Example 11
+//  What does it mean when we say “Functions are First-Class Citizens”?
+
+// Ans-->When we say functions are first-class citizens, it means that functions in JavaScript are treated like normal values.
+
+// This means a function can:
+// Be stored in a variable
+// Be passed as an argument to another function
+// Be returned from a function
+// Because functions can do all these things, they are called first-class citizens.
+
+// Why is this important?
+// Makes code flexible and reusable
+// Helps in callbacks, higher-order functions, and closures
+// Widely used in real-world JavaScript (events, timers, APIs)
+
+
+// <p>Can You assign a function to a variable and then all it?</p>
+
+// let a = function(){
+//     console.log("Hello");
+// }
+// a();
+
+//<h1> Example 13: </h1>
+//<p>Pass A function into anthor funtion and excute it inside.</p><p>Ans and Why, How</p>
+
+// function abcd(val){
+//     val();
+// }
+// abcd(function(){
+//     console.log("Hello");
+// });
+
+//<h1> Example 14: </h1><p>What is higer order function?</p><p>Ans and Why</p>
+// jo function dusre function ko argument ke roop me accept kare ya function return kare, use Higher Order Function kehte hain.
+
+// Why important?Clean code Reusability Functional programming
+
+// function higher(fn){
+//     fn();
+// }
+
+// Example 16: pure or impure function?
+
+// let total = 5;
+
+// function num(num){
+//     total += num;
+// }
+// num(3);
+
+// Why?
+// External variable (total) modify kar raha hai
+// Same input par different output ho sakta hai
+// Side effect present hai
+
+// Example 17: <h1> Example 17: </h1><p>convert example 16 function into pure function?</p><p>Ans and how</p>
+
+// function num(total, num){
+//     return total + num;
+// }
+// let result = num(5, 3);
+
+// Why Pure?
+// No external variable
+// Same input → same output
+// No side effects
+
+// Example 18:<p>What is Closure? When is it created?</p><p>Ans and Example</p>
+
+// Closure tab banta hai jab ek function apne outer function ke variables ko yaad rakhta hai, chahe outer function execute ho chuka ho.
+
+// function outer(){
+//     let x = 10;
+//     return function(){
+//         console.log(x);
+//     }
+// }
+
+// When created?
+// Function creation time
+// Not execution time
+
+{/* <h1> Example 19: </h1><p>What's logged?</p> */}
+
+// 
+//function outer(){
+//     let count = 0;
+//     return function(){
+//         count++;
+//         console.log(count);
+//     };
+// }
+
+// const counter = outer();
+// counter();
+// counter();
+// Why?
+// count closure me preserved hai
+// outer() sirf ek baar call hua
+// Same count memory use ho rahi hai
+
+//<div><h1> Example 20: </h1><p>Convert below function into an IIFE:</p><p>function init(){    console.log("Initialized"); }</p><p>Ans and Why</p> </div>
+
+// (function(){
+//     console.log("Initialized");
+// })();
+
+// Why IIFE?
+// Turant execute hota hai
+// Global scope pollute nahi karta
+
+{/* <h1> Example 21: </h1><p>What is the use of IIFE? Name one real-world use case.</p> */}
+
+// let fun = (function(){
+//     let score = 0;
+//     return {
+//         getScore(){
+//             console.log(score);
+//         },
+//         setScore(val){
+//             score = val;
+//         }
+//     }
+// })();
+
+// score private variable hai
+// Bahar se direct access nahi ho sakta
+
+// Real-world use
+// Data hiding
+// Module pattern
+// Security
+
+{/* <h1> Example 22: </h1>
+<p>What will be the output here and why?</p>
+<p>temp_var();</p>
+<p>var temp_var = function(){
+    console.log("Hello");
+}</p>
+<p>Ans and Why</p>
+</div> */}
+
+// temp_var();
+
+// var temp_var = function(){
+//     console.log("Hello");
+// }
+
+//  output:  TypeError: temp_var is not a function
+// Why?
+// Hoisting ke time:
+// var temp_var; // undefined
+
+{/* <h1> Example 23: </h1>
+<p>What will be the output here and why?</p>
+<p>temp_var();</p>
+<p>function temp_var(){
+    console.log("Hello");
+}</p>
+<p>Ans and Why</p>
+</div> */}
+
+// temp_var();
+
+// function temp_var(){
+//     console.log("Hello");
+// }
+
+// output : Hello
+
+// Why?
+// Function declaration fully hoisted hota hai
+// Call before definition allowed
