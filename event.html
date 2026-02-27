@@ -10,8 +10,21 @@
             height: 200px;
             border: 1px solid black;
         }
-
+    .mobile{
+        text-transform: capitalize;
+    }
         
+    .box1{
+        width:200px;
+        height: 200px;
+        border:2px solid red;
+    }
+
+    .box2{
+            width:200px;
+            height: 200px;
+            background-color: black;
+        }
     </style>
 </head>
 <body>
@@ -28,9 +41,32 @@
 
 
     <button class="btn1">Dark Mode</button>
-    <script src="event.js"></script>
 
+    <h2>Select Mobile: <i></i></h2>
+    <select class="select">
     
-  <script></script>
+    <option value="">Select phone</option>
+    <option value="Iphone 15">Iphone 15</option>
+    <option value="S22 Ultra">S22 Ultra</option>
+    <option value="Nokia 3310">Nokia 3310</option>
+</select>
+<br><br>
+
+
+<div class="box1"></div>
+<br>
+Change Background Color: <input type="color" class="bg-inp"><br>
+Change Border Color: <input type="color" class="border-inp">
+<br><br>
+
+<form action="">
+    <input type="text" class="keydown">
+    <button type="submit" value="submit">Submit</button>
+</form>
+
+
+<div class="box2"></div>
+
+<script src="event.js"></script>
 </body>
 </html>
